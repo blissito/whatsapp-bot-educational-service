@@ -1,0 +1,28 @@
+name = "whatsapp-flowise-webhook"
+main = "cloudflare_worker_students.ts"
+compatibility_date = "2024-01-01"
+
+# KV Namespace para almacenar configuraciones de estudiantes
+[[kv_namespaces]]
+binding = "KV"
+id = "0d3404f7971044b49354b9419f699232"
+
+# Variables de entorno
+[vars]
+WEBHOOK_VERIFY_TOKEN = "fixtergeek_2024"  # Token para verificar webhooks de WhatsApp
+
+# Variables secretas - CONFIGURA CON: wrangler secret put VARIABLE_NAME
+# FLOWISE_API_KEY = "configurar_con_wrangler_secret"  # Solo si Flowise tiene autenticación
+
+# Configuración de despliegue
+[build]
+command = ""
+
+# Configuración de desarrollo local
+[env.dev]
+name = "whatsapp-flowise-webhook-dev"
+vars = { FLOWISE_API_URL = "http://localhost:3000", CHATFLOW_ID = "test-chatflow-id", WEBHOOK_VERIFY_TOKEN = "dev-token" }
+
+# Configuración de producción
+[env.production]
+name = "whatsapp-flowise-webhook-prod"

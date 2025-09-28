@@ -1,0 +1,31 @@
+{
+  "name": "whatsapp-bot-educational-service",
+  "version": "1.0.0",
+  "description": "Educational system for students to experiment with WhatsApp + Flowise bots safely",
+  "main": "cloudflare_worker_students.ts",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "tail": "wrangler tail"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "cloudflare",
+    "workers",
+    "flowise",
+    "educational",
+    "webhook",
+    "typescript"
+  ],
+  "author": "@blissito",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blissito/whatsapp-bot-educational-service"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241220.0",
+    "typescript": "^5.0.0"
+  }
+}
