@@ -1,4 +1,4 @@
-# 🤖 WhatsApp Bot Educational Service
+# 🤖 WhatsApp Bot para fines educativos de Agentes IA
 
 <div align="center">
 
@@ -8,7 +8,7 @@
 
 **Sistema educativo para que estudiantes experimenten con bots de WhatsApp + Flowise de forma segura.**
 
-*Desarrollado por [@blissito](https://github.com/blissito) 💫*
+_Desarrollado por [@blissito](https://github.com/blissito) 💫_
 
 [![Deploy to Cloudflare Workers](https://img.shields.io/badge/Deploy-Cloudflare%20Workers-F38020?style=flat-square&logo=cloudflare)](https://dash.cloudflare.com)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github)](https://github.com)
@@ -70,6 +70,7 @@ wrangler login
 ### 2. Obtener URL del Sistema
 
 Después del despliegue obtienes:
+
 ```
 🔗 Sistema: https://whatsapp-flowise-webhook.fixtergeek.workers.dev
 📊 Health: https://whatsapp-flowise-webhook.fixtergeek.workers.dev/health
@@ -78,6 +79,7 @@ Después del despliegue obtienes:
 ### 3. Compartir con Estudiantes
 
 Solo envía a tus estudiantes:
+
 - **URL de registro:** `https://tu-worker.workers.dev`
 - **Token global:** `fixtergeek_2024` (o que cada uno use su token personalizado)
 
@@ -89,6 +91,7 @@ Solo envía a tus estudiantes:
 
 1. **Ve a:** La URL que te dio tu profesor
 2. **Llena el formulario** con:
+
    - Tu nombre
    - Phone Number ID (de WhatsApp Business)
    - URL de tu Flowise
@@ -124,17 +127,20 @@ Solo envía a tus estudiantes:
 ## 🔧 Mejoras del Sistema v2
 
 ### ✅ Webhook Único Global
+
 - **Simplicidad máxima:** Una sola URL `/webhook/` para TODOS
 - **Identificación automática:** Por `phone_number_id` del metadata
 - **Zero fricción:** No necesidad de URLs personalizadas
 
 ### ✅ Worker como Proxy Simple
+
 - **Fire-and-forget:** Worker NO espera respuestas de Flowise
 - **Performance:** Respuesta inmediata 200 OK
 - **Flexibilidad:** Custom Function maneja el envío a WhatsApp
 
 ### ✅ Contexto en Prompt (LLM Extractor)
-- **Sin variables $vars.*:** Contexto integrado en el prompt
+
+- **Sin variables $vars.\*:** Contexto integrado en el prompt
 - **LLM Extractor:** Nodo LLM parsea automáticamente el contexto
 - **Tokens hardcodeados:** En Custom Function personalizado por estudiante
 
@@ -182,6 +188,7 @@ wrangler tail --search "Processing message.*for student"
 ```
 
 ### Métricas por Estudiante:
+
 - **Mensajes procesados** por phoneNumberId
 - **Errores de token** específicos
 - **Tiempo de respuesta** por configuración
@@ -192,12 +199,14 @@ wrangler tail --search "Processing message.*for student"
 ## 🔒 Características de Seguridad
 
 ### Identificación Automática por Estudiante:
+
 - **Phone Number ID único** identifica automáticamente al estudiante
 - **Tokens personalizados opcionales** para seguridad adicional
 - **Validación en KV** antes de procesar mensajes
 - **Logs específicos** para auditoría por phone_number_id
 
 ### Fallbacks Inteligentes:
+
 - Token personalizado → Token global si no existe
 - Configuración individual → Configuración base
 - Error handling específico por estudiante
@@ -207,18 +216,21 @@ wrangler tail --search "Processing message.*for student"
 ## 🎨 Interfaz de Usuario Mejorada
 
 ### Página de Registro:
+
 - **🎨 Diseño moderno** estilo GitHub
 - **📱 Responsive** para móvil y desktop
 - **⚡ Validación en tiempo real**
 - **🔧 URLs generadas automáticamente**
 
 ### Página de Edición:
+
 - **🔐 Autenticación** con phoneNumberId + token
 - **📝 Formulario pre-llenado** con datos existentes
 - **✅ Validación** de tokens y configuración
 - **🔄 Actualización** sin re-entrada de datos
 
 ### Página de Políticas:
+
 - **📋 URL copyable** para compartir fácilmente
 - **⚖️ Términos claros** de uso educativo
 - **🎯 Enfoque educativo** exclusivamente
@@ -272,6 +284,7 @@ wrangler tail --search "Student not found"
 **Desarrollado con ❤️ por [@blissito](https://github.com/blissito)**
 
 ### 🛠️ Tecnologías Utilizadas:
+
 - **Cloudflare Workers** - Serverless compute
 - **Cloudflare KV** - Edge storage
 - **TypeScript** - Type safety
@@ -279,7 +292,9 @@ wrangler tail --search "Student not found"
 - **Flowise** - No-code AI workflows
 
 ### 🤝 Contribuciones:
+
 Las contribuciones son bienvenidas. Por favor:
+
 1. Fork del repositorio
 2. Crear feature branch
 3. Commit con mensaje descriptivo
@@ -296,11 +311,13 @@ Este proyecto está bajo licencia MIT. Ver archivo `LICENSE` para más detalles.
 ## 📞 Soporte
 
 ### Para Reportar Issues:
+
 - **GitHub Issues:** [Crear nuevo issue](https://github.com/tu-usuario/whatsapp-bot-multi-estudiante/issues)
 - **Documentación:** Este README
 - **Logs:** Siempre incluir logs al reportar problemas
 
 ### Para Contacto Directo:
+
 - **Twitter:** [@blissito](https://twitter.com/blissito)
 - **GitHub:** [@blissito](https://github.com/blissito)
 
@@ -312,6 +329,6 @@ Este proyecto está bajo licencia MIT. Ver archivo `LICENSE` para más detalles.
 
 [![Deploy Now](https://img.shields.io/badge/Deploy%20Now-Cloudflare%20Workers-F38020?style=for-the-badge&logo=cloudflare)](https://dash.cloudflare.com)
 
-*Made with 💫 by [@blissito](https://github.com/blissito)*
+_Made with 💫 by [@blissito](https://github.com/blissito)_
 
 </div>
